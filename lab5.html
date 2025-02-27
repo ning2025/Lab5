@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 5</title>
+
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+  >
+ 
+
+  <style>
+    .animal-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="bg-dark text-light">
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">Animals</a>
+
+    <div class="ms-auto d-flex gap-2">
+
+      <button class="btn btn-dark" id="darkBtn">Dark</button>
+
+      <button class="btn btn-light" id="lightBtn">Light</button>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+
+
+  <h1 class="mb-3">Animals</h1>
+
+
+  <div class="row mb-4">
+   
+    <div class="col-md-6">
+      <input 
+        type="search"
+        class="form-control"
+        placeholder="Search Animals"
+        style="max-width: 300px;"  
+      >
+    </div>
+  
+ 
+    <div class="col-md-6 d-flex gap-3 align-items-center">
+      <a href="#" class="text-decoration-none text-light">Adaptations</a>
+      <a href="#" class="text-decoration-none text-primary fw-bold">Behavior</a>
+      <a href="#" class="text-decoration-none text-light">Conservation</a>
+      <a href="#" class="text-decoration-none text-light">Diversity</a>
+    </div>
+  </div>
+
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card bg-dark text-light align-items-center p-3">
+        <img src="images/dog.jpg" alt="Cute Puppy" class="animal-img rounded-circle">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card bg-dark text-light align-items-center p-3">
+        <img src="images/cat.jpg" alt="Cute cat" class="animal-img rounded-circle">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card bg-dark text-light align-items-center p-3">
+        <img src="images/penguin.jpg" alt="Cute penguin" class="animal-img rounded-circle">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+  const body = document.body;
+  const darkBtn = document.getElementById('darkBtn');
+  const lightBtn = document.getElementById('lightBtn');
+
+  darkBtn.addEventListener('click', () => {
+
+    document.documentElement.setAttribute('data-bs-theme', 'dark');
+    body.classList.add('bg-dark', 'text-light');
+    body.classList.remove('bg-light', 'text-dark');
+  });
+
+  lightBtn.addEventListener('click', () => {
+    document.documentElement.setAttribute('data-bs-theme', 'light');
+    body.classList.add('bg-light', 'text-dark');
+    body.classList.remove('bg-dark', 'text-light');
+  });
+</script>
+
+</body>
+</html>
